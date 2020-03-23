@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goldflutterstocks/widgets/HomePage.dart';
+import 'package:goldflutterstocks/pages/HomePage.dart';
 
 void main() => runApp(App());
 
