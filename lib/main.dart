@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goldflutterstocks/pages/HomePage.dart';
+import 'package:goldflutterstocks/pages/StocksPage.dart';
 
 void main() => runApp(App());
 
@@ -11,7 +11,9 @@ class App extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       title:"Stocks",
-      home: HomePage()
+      home: HomePage(),
+//      stock:StockPage(),
+//      crypto:CryptoPage(),
     );
   }
 }
