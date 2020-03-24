@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 /// THIS IS WHERE I CREATE MY DASHBOARD TILES
 
 class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();
-
 }
 
 class _DashboardState extends State<Dashboard> {
-
   ///creating my items and tile conf
   Material myItems(IconData icon, String heading, int color) {
 //    BackgColor.fromRGBO(59, 89, 152, 1.0);
@@ -22,6 +21,7 @@ class _DashboardState extends State<Dashboard> {
       borderRadius: BorderRadius.circular(24.0),
 
       ///inside tiles elements
+
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -74,7 +74,10 @@ class _DashboardState extends State<Dashboard> {
           "Dashboard",
           style: TextStyle(color: Colors.white),
         ),
+
+//        ],
       ),
+
 
       ///creating the grid tiles
       body: StaggeredGridView.count(
@@ -86,6 +89,10 @@ class _DashboardState extends State<Dashboard> {
         ///tile definition
         children: <Widget>[
           ///creating a function for each tile
+
+
+
+
           myItems(Icons.graphic_eq, "Graphic_eq", 0xffed622d),
           myItems(Icons.bookmark, "Bookmark", 0xff26cb3c),
           myItems(Icons.notifications, "Notifications", 0xffff3266),
@@ -94,6 +101,7 @@ class _DashboardState extends State<Dashboard> {
           myItems(Icons.group_work, "Group Work", 0xffad61f1),
           myItems(Icons.message, "Messages", 0xff7297ff),
         ],
+
         staggeredTiles: [
           ///graphic_eq tile
           StaggeredTile.extent(2, 130.0),
