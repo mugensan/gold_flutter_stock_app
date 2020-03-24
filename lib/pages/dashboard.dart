@@ -13,6 +13,9 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   ///creating my items and tile conf
   Material myItems(IconData icon, String heading, int color) {
+    onTap:(){
+      Navigator.pushNamed(context, "/crypto_page");
+    };
 //    BackgColor.fromRGBO(59, 89, 152, 1.0);
     return Material(
       color: Color.fromRGBO(59, 89, 152, 0.85),
@@ -93,6 +96,7 @@ class _DashboardPageState extends State<DashboardPage> {
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
 
 
+
         ///tile definition
         children: <Widget>[
 //          onPressed:(){
@@ -107,12 +111,13 @@ class _DashboardPageState extends State<DashboardPage> {
 //        Navigator.of(context).pushNamed("/crypto_page");
 //      },
 
-          myItems(Icons.bookmark, "Bookmark", 0xff26cb3c),
-          myItems(Icons.notifications, "Notifications", 0xffff3266),
-          myItems(Icons.attach_money, "Balance", 0xff3399fe),
+
+
+          myItems(Icons.account_balance, "Balance", 0xff26cb3c),
+          myItems(Icons.attach_money, "CryptoCurrency", 0xffff3266),
+          myItems(Icons.graphic_eq, "Stocks", 0xff3399fe),
           myItems(Icons.settings, "Settings", 0xff622F74),
-          myItems(Icons.group_work, "Group Work", 0xffad61f1),
-          myItems(Icons.message, "Messages", 0xff7297ff),
+          myItems(Icons.message, "Gold Book", 0xffad61f1),
         ],
 
         staggeredTiles: [

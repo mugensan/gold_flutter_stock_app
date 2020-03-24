@@ -8,8 +8,12 @@ class Stock {
   final String symbol;
   final String company;
   final double price;
+  final double open;
+  final double close;
+  final double high;
+  final double low;
 
-  Stock({this.symbol, this.company, this.price});
+  Stock({this.symbol, this.company, this.price,this.open,this.close,this.high,this.low});
 
   static List<Stock> getAll() {
     List<Stock>stocks = List<Stock>();
