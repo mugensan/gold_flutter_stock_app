@@ -76,8 +76,9 @@ class HomePage extends StatelessWidget {
               title: new Text("StockPage"),
               trailing: new Icon(Icons.arrow_forward),
               onTap:() {
-                Navigator.of(context).pushNamed("/stock_page");
                 Navigator.of(context).pop();
+                Navigator.of(context).pushNamed("/stock_page");
+
               },
             ),
             new Divider(),

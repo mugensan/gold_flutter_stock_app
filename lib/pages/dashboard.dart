@@ -4,7 +4,6 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 /// THIS IS WHERE I CREATE MY DASHBOARD TILES
 
 class DashboardPage extends StatefulWidget {
-
   DashboardPage();
 
   @override
@@ -69,7 +68,13 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+//     TODO: implement build
+//
+//    routes:
+//    <String, WidgetBuilder>{
+//      "/crypto_page": (BuildContext context) => new CryptoPage(),
+//    };
+
     return Scaffold(
 //      appBar: AppBar(
 //        title: Text(
@@ -80,7 +85,6 @@ class _DashboardPageState extends State<DashboardPage> {
 ////        ],
 //      ),
 
-
       ///creating the grid tiles
       body: StaggeredGridView.count(
         crossAxisCount: 2,
@@ -88,14 +92,21 @@ class _DashboardPageState extends State<DashboardPage> {
         mainAxisSpacing: 12.0,
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
 
+
         ///tile definition
         children: <Widget>[
+//          onPressed:(){
+//            myItems(Icons.graphic_eq, "Graphic_eq", 0xffed622d);
+//            Navigator.of(context).pushNamed("/crypto_page");
+//
+//          }
           ///creating a function for each tile
 
+//          myItems(Icons.graphic_eq, "Graphic_eq", 0xffed622d),
+//      onTap: () {
+//        Navigator.of(context).pushNamed("/crypto_page");
+//      },
 
-
-
-          myItems(Icons.graphic_eq, "Graphic_eq", 0xffed622d),
           myItems(Icons.bookmark, "Bookmark", 0xff26cb3c),
           myItems(Icons.notifications, "Notifications", 0xffff3266),
           myItems(Icons.attach_money, "Balance", 0xff3399fe),
@@ -105,6 +116,7 @@ class _DashboardPageState extends State<DashboardPage> {
         ],
 
         staggeredTiles: [
+
           ///graphic_eq tile
           StaggeredTile.extent(2, 130.0),
 
