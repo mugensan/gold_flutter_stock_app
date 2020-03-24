@@ -10,7 +10,10 @@ class CryptoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Cryptocurrency"),
+      ),
+
       body: Stack(children: <Widget>[
         Container(
           padding: EdgeInsets.all(10),

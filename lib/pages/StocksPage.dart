@@ -10,7 +10,9 @@ class StocksPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Stocks"),
+      ),
       body: Stack(children: <Widget>[
         Container(
           padding: EdgeInsets.all(10),
