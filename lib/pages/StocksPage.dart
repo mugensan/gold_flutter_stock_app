@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:goldflutterstocks/models/stock.dart';
 import 'package:goldflutterstocks/widgets/stock_list.dart';
 
-class HomePage extends StatelessWidget {
+class StocksPage extends StatelessWidget {
+
+  StocksPage();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

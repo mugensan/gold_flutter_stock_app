@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 /// THIS IS WHERE I CREATE MY DASHBOARD TILES
 
-class Dashboard extends StatefulWidget {
+class DashboardPage extends StatefulWidget {
+
+  DashboardPage();
+
   @override
-  _DashboardState createState() => _DashboardState();
+  _DashboardPageState createState() => _DashboardPageState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardPageState extends State<DashboardPage> {
   ///creating my items and tile conf
   Material myItems(IconData icon, String heading, int color) {
 //    BackgColor.fromRGBO(59, 89, 152, 1.0);
@@ -69,14 +71,14 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Dashboard",
-          style: TextStyle(color: Colors.white),
-        ),
-
-//        ],
-      ),
+//      appBar: AppBar(
+//        title: Text(
+//          "Dashboard",
+//          style: TextStyle(color: Colors.white),
+//        ),
+//
+////        ],
+//      ),
 
 
       ///creating the grid tiles
