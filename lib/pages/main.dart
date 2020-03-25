@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:goldflutterstocks/pages/CryptoMock.dart';
 import 'package:goldflutterstocks/pages/CryptoPage.dart';
 import 'package:goldflutterstocks/pages/SplashScreenPage.dart';
+import 'package:goldflutterstocks/pages/StocksMock.dart';
 import 'package:goldflutterstocks/pages/StocksPage.dart';
 import 'package:goldflutterstocks/pages/dashboard.dart';
 
@@ -12,12 +14,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Dashboard",
-      home: SplashScreenPage(),
-//      home: HomePage(),
+//      home:GraphPage(),
+//      home: SplashScreenPage(),
+      home: HomePage(),
       routes: <String, WidgetBuilder>{
         "/home_page": (BuildContext context) => new DashboardPage(),
-        "/crypto_page": (BuildContext context) => new CryptoPage(),
-        "/stock_page": (BuildContext context) => new StocksPage(),
+        "/crypto_page": (BuildContext context) => new CryptoMock(),
+        "/stock_page": (BuildContext context) => new StocksMock(),
         "/dashboard": (BuildContext context) => new HomePage(),
       },
     );
@@ -114,7 +117,7 @@ class HomePage extends StatelessWidget {
       body: new Container(
         child: new Center(child: DashboardPage()
 //          child: new Text("this is where the dashboard will go"),
-            ),
+        ),
       ),
     );
   }

@@ -4,6 +4,8 @@
     THIS WILL BE REPLACED BY AN API CALL
  **/
 
+
+
 class Stock {
   final String symbol;
   final String company;

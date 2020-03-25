@@ -3,12 +3,14 @@ import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
 
-void main() => runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -263,10 +265,10 @@ class _MyHomePageState extends State<MyHomePage> {
         }),
         title: Text(widget.title),
         actions: <Widget>[
-          IconButton(icon: Icon(
-              FontAwesomeIcons.chartLine), onPressed: () {
-            //
-          }),
+//          IconButton(icon: Icon(
+//              FontAwesomeIcons.chartLine), onPressed: () {
+//            //
+//          }),
         ],
       ),
       body:Container(
