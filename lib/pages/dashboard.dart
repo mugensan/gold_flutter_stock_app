@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class DashboardPage extends StatefulWidget {
   DashboardPage();
+  var myItem1;
 
   @override
   _DashboardPageState createState() => _DashboardPageState();
@@ -13,11 +14,15 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   ///creating my items and tile conf
   Material myItems(IconData icon, String heading, int color) {
-    onTap:(){
-      Navigator.pushNamed(context, "/crypto_page");
-    };
+//    onTap:(){
+//
+//      Navigator.pushNamed(context, "/crypto_page");
+//      print("TAPPED");
+//
+//    };
 //    BackgColor.fromRGBO(59, 89, 152, 1.0);
-    return Material(
+    return new Material(
+
       color: Color.fromRGBO(59, 89, 152, 0.85),
 //      color: Colors.white,
       elevation: 14.0,
@@ -25,6 +30,7 @@ class _DashboardPageState extends State<DashboardPage> {
       borderRadius: BorderRadius.circular(24.0),
 
       ///inside tiles elements
+
 
       child: Center(
         child: Padding(
@@ -71,14 +77,8 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-//     TODO: implement build
-//
-//    routes:
-//    <String, WidgetBuilder>{
-//      "/crypto_page": (BuildContext context) => new CryptoPage(),
-//    };
-
     return Scaffold(
+
 //      appBar: AppBar(
 //        title: Text(
 //          "Dashboard",
@@ -89,11 +89,13 @@ class _DashboardPageState extends State<DashboardPage> {
 //      ),
 
       ///creating the grid tiles
+
       body: StaggeredGridView.count(
+
         crossAxisCount: 2,
         crossAxisSpacing: 12.0,
         mainAxisSpacing: 12.0,
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
 
 
 
@@ -116,14 +118,14 @@ class _DashboardPageState extends State<DashboardPage> {
           myItems(Icons.account_balance, "Balance", 0xff26cb3c),
           myItems(Icons.attach_money, "CryptoCurrency", 0xffff3266),
           myItems(Icons.graphic_eq, "Stocks", 0xff3399fe),
-          myItems(Icons.settings, "Settings", 0xff622F74),
-          myItems(Icons.message, "Gold Book", 0xffad61f1),
+          myItems(Icons.book, "Porfolio", 0xff622F74),
+          myItems(Icons.settings, "Settings", 0xffad61f1),
         ],
 
         staggeredTiles: [
 
           ///graphic_eq tile
-          StaggeredTile.extent(2, 130.0),
+          const StaggeredTile.extent(2, 130.0),
 
           ///bookmark+notification
           StaggeredTile.extent(1, 130.0),

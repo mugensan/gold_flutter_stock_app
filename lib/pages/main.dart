@@ -2,10 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:goldflutterstocks/pages/CryptoMock.dart';
 import 'package:goldflutterstocks/pages/CryptoPage.dart';
+import 'package:goldflutterstocks/pages/LiveCrypto.dart';
+import 'package:goldflutterstocks/pages/LiveCryptoMock.dart';
+import 'package:goldflutterstocks/pages/PortfolioPage.dart';
 import 'package:goldflutterstocks/pages/SplashScreenPage.dart';
 import 'package:goldflutterstocks/pages/StocksMock.dart';
 import 'package:goldflutterstocks/pages/StocksPage.dart';
 import 'package:goldflutterstocks/pages/dashboard.dart';
+
+import 'DashboardPageTest2.dart';
+import 'DashboardTest.dart';
 
 void main() => runApp(App());
 
@@ -16,12 +22,17 @@ class App extends StatelessWidget {
       title: "Dashboard",
 //      home:GraphPage(),
 //      home: SplashScreenPage(),
-      home: HomePage(),
+//      home: DashboardPageTest(),
+//      home: DashboardPageTest2(),
+        home:HomePage(),
       routes: <String, WidgetBuilder>{
         "/home_page": (BuildContext context) => new DashboardPage(),
         "/crypto_page": (BuildContext context) => new CryptoMock(),
         "/stock_page": (BuildContext context) => new StocksMock(),
         "/dashboard": (BuildContext context) => new HomePage(),
+        "/portfolio":(BuildContext context)=>new PortfolioPage(),
+//        "/dashboard": (BuildContext context) => new DashboardPageTest2(),
+//        "/dashboard": (BuildContext context) => new DashboardPageTest(),
       },
     );
   }
@@ -94,6 +105,10 @@ class HomePage extends StatelessWidget {
             new ListTile(
               title: new Text("Portfolio"),
               trailing: new Icon(Icons.arrow_forward),
+                onTap:(){
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed("/portfolio");
+                },
 
               ///TODO ADD ROUTE
             ),
