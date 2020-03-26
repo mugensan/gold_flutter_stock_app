@@ -29,7 +29,7 @@ class App extends StatelessWidget {
         "/home_page": (BuildContext context) => new DashboardPage(),
         "/crypto_page": (BuildContext context) => new CryptoMock(),
         "/stock_page": (BuildContext context) => new StocksMock(),
-        "/dashboard": (BuildContext context) => new HomePage(),
+//        "/dashboard": (BuildContext context) => new HomePage(),
         "/portfolio":(BuildContext context)=>new PortfolioPage(),
 //        "/dashboard": (BuildContext context) => new DashboardPageTest2(),
 //        "/dashboard": (BuildContext context) => new DashboardPageTest(),
