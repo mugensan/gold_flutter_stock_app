@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:goldflutterstocks/pages/GraphPage.dart';
+import 'package:http/http.dart' as http;
 
 import 'CryptoMock.dart';
 import 'StocksMock.dart';
@@ -14,6 +17,9 @@ import 'main.dart';
 
 class PortfolioPage extends StatelessWidget {
   // This widget is the root of your application.
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,17 +42,54 @@ class PortfolioPage extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+//  MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
+//  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+
+  final String url ="https://my.api.mockaroo.com/sharpe_ration_data.json?key=cbcf98d0";
+
+  List crypto_data;
+
+
+  @override
+  void initState() {
+    super.initState();
+    this.getJsonData();
+  }
+
+  Future<String> getJsonData() async{
+    var response = await http.get(
+      ///encoding url
+        Uri.encodeFull(url),
+        ///only accept json response
+        headers: {"Accept":"application/json"}
+    );
+
+    ///test: this line will not be executed until we get a response
+    print(response.body);
+
+    ///if response modify state of our widget
+    setState(() {
+      var convertDataToJson = json.decode(response.body);
+      crypto_data = convertDataToJson;
+      ///need to extract data
+    });
+
+    return "Success!";
+  }
+
+
   var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0, -0.5, 0.0, 0.0];
   var data1 = [0.0,-2.0,3.5,-2.0,0.5,0.7,0.8,1.0,2.0,3.0,3.2];
+//  var dataApi1 = crypto_data[index]['stocks_price'];
+//  var data1Api2 = crypto_data['stocks_price'];
 
   List<CircularStackEntry> circularData = <CircularStackEntry>[
     new CircularStackEntry(
@@ -61,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   Material myTextItems(String title, String subtitle){
+
     return Material(
       color: Colors.white,
       elevation: 14.0,
@@ -152,6 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   Material mychart1Items(String title, String priceVal,String subtitle) {
+
     return Material(
       color: Colors.white,
       elevation: 14.0,
@@ -177,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   Padding(
                     padding: EdgeInsets.all(1.0),
-                    child: Text(priceVal, style: TextStyle(
+                    child: Text(title, style: TextStyle(
                       fontSize: 30.0,
                     ),),
                   ),
@@ -192,7 +237,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: EdgeInsets.all(1.0),
                     child: new Sparkline(
-                      data: data,
+
+                      data : data,
                       lineColor: Color(0xffff6101),
                       pointsMode: PointsMode.all,
                       pointSize: 8.0,

@@ -12,6 +12,7 @@ import 'package:goldflutterstocks/pages/dashboard.dart';
 
 import 'DashboardPageTest2.dart';
 import 'DashboardTest.dart';
+import 'PortfolioPageTest.dart';
 
 void main() => runApp(App());
 
@@ -30,7 +31,7 @@ class App extends StatelessWidget {
         "/crypto_page": (BuildContext context) => new CryptoMock(),
         "/stock_page": (BuildContext context) => new StocksMock(),
 //        "/dashboard": (BuildContext context) => new HomePage(),
-        "/portfolio":(BuildContext context)=>new PortfolioPage(),
+        "/portfolio":(BuildContext context)=>new PortfolioPageTest(),
 //        "/dashboard": (BuildContext context) => new DashboardPageTest2(),
 //        "/dashboard": (BuildContext context) => new DashboardPageTest(),
       },

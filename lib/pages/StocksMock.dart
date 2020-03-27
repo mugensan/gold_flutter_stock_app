@@ -49,7 +49,7 @@ class _StocksMockState extends State<StocksMock> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Retrieve JSON via HTTP Get"),
+        title: new Text("Retrieve JSON via HTTP Get for Stocks"),
       ),
       body: new ListView.builder(
           itemCount: data == null ? 0 : data.length,
