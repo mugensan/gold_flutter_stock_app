@@ -180,6 +180,7 @@ class _PortfolioPageTestState extends State<PortfolioPageTest> {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
+
             backgroundColor: Color(0xff1976d2),
             bottom: TabBar(
               indicatorColor: Color(0xff9962D0),
@@ -200,6 +201,84 @@ class _PortfolioPageTestState extends State<PortfolioPageTest> {
             ),
             title: Text('My Stocks Charts'),
           ),
+          ///creating the drawer for the homepage/dashboard
+          drawer: new Drawer(
+            child: new ListView(
+              children: <Widget>[
+
+                new UserAccountsDrawerHeader(
+                  accountName: new Text("Kevin Roditi"),
+                  accountEmail: new Text("kevin@gmail.com"),
+                  currentAccountPicture: ClipOval(
+                    child: Image.asset(
+                      "assets/mugenThinker.png",
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  otherAccountsPictures: <Widget>[
+                    new ClipOval(
+                      child: Image.asset(
+                        "assets/mugenThinker.png",
+                        fit: BoxFit.contain,
+//                child: new Text("K"),
+                      ),
+                    ),
+                  ],
+                ),
+                new ListTile(
+                  title: new Text("Dashboard"),
+                  trailing: new Icon(Icons.arrow_forward),
+                  onTap: () {
+                    Navigator.of(context).pushNamed("/dashboard");
+                    Navigator.of(context).pop();
+                  },
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("CryptoPage"),
+                  trailing: new Icon(Icons.arrow_forward),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pushNamed("/crypto_page");
+                  },
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("StockPage"),
+                  trailing: new Icon(Icons.arrow_forward),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pushNamed("/stock_page");
+                  },
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Portfolio"),
+                  trailing: new Icon(Icons.arrow_forward),
+                  onTap:(){
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pushNamed("/portfolio");
+                  },
+
+                  ///TODO ADD ROUTE
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("About"),
+                  trailing: new Icon(Icons.arrow_forward),
+
+                  ///TODO ADD ROUTE
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Close Menu"),
+                  trailing: new Icon(Icons.close),
+                  onTap: () => Navigator.of(context).pop(),
+                )
+              ],
+            ),
+          ),
+
           body: TabBarView(
             children: <Widget>[
               Padding(

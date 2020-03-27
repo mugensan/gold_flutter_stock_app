@@ -49,7 +49,7 @@ class _LiveCryptoState extends State<LiveCrypto> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Retrieve JSON via HTTP Get"),
+        title: new Text("LiveCrypto"),
       ),
       body: new ListView.builder(
         itemCount: crypto_data == null ? 0 : crypto_data.length,
